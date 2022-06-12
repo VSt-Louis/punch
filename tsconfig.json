@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strict": true,
+    "rootDir": ".",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules"]
+}
