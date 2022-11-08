@@ -1,4 +1,4 @@
-import { Action } from './types'
+import { Action } from '../types'
 
 export type InTime = { start: number; end: number }
 type Status = {
@@ -6,7 +6,7 @@ type Status = {
   inTimes: InTime[]
 }
 
-export const makeStatus = (actions: Action[]): Status => {
+export const statusFromActions = (actions: Action[]): Status => {
   actions.sort((a, b) => a.timestamp.getTime() - b.timestamp.getTime())
 
   const status: Status = {

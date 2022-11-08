@@ -1,5 +1,5 @@
 import { Action } from '../types'
-import { makeStatus } from '../status'
+import { statusFromActions } from './statusFromActions'
 import { weekStartOfDate, weekStartFormatted, MS_IN_A_WEEK } from '../utils/date'
 
 type WorkWeek = {
@@ -8,7 +8,7 @@ type WorkWeek = {
 }
 
 export const week = (actions: Action[]) => {
-  const status = makeStatus(actions)
+  const status = statusFromActions(actions)
 
   const workWeeks: WorkWeek[] = []
 

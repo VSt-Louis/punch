@@ -34,7 +34,7 @@ const partsFromDate = (date: Date) => [
 let cache: string[] | null = null
 const getPreviousDateParts = async (): Promise<number[]> => {
   if (!cache) {
-    const fileContents = await read().catch(err => '')
+    const fileContents = (await read().catch(err => '')) || ''
     cache = fileContents.split(/\r?\n/).filter(i => i)
   }
   if (!cache.length) {
