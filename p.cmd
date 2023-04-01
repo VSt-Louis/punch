@@ -1,1 +1,1 @@
-@node dist\index.js %*
+@node dev\index.js %*
