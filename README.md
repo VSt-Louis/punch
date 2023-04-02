@@ -52,20 +52,19 @@ Punch status: OUT
 Total hours: 2.6019544444444446
 ```
 
-### Overriding the default time
+### Overriding the default date and time
 
-By default, the in and out commands log the current time. If this is not the desired behaviour, the user can supply an additionnal argument to the command, which will be interpreted the following way:
+Commands which recieve dates as inputs accept partial dates.
 
-If a partial date is found, it is assumed that the missing parts are unchanged from the last time that was logged in the text file.
-If no such date cant be found, current date is used.
+valid inputs are of the form:
 
 ```
-in 2022-02-12 09:19
-out 10:04             //parsed as 2022-02-12 10:04
-in 21 07:20           //parsed as 2022-02-21 07:20
-out 45                //parsed as 2022-02-21 07:45
-in 03-01 08:12        //parsed as 2022-03-01 08:12
-out 10:21             //parsed as 2022-03-01 10:21
+yyyy-mm-dd HH:mm
+mm-dd HH:mm
+dd HH:mm
+HH:mm
+mm
 ```
 
+These date parts will modify the current date, and that new date will be passed to the command.
 Seconds are not supported for now, but could be added in the future.

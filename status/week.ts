@@ -1,15 +1,12 @@
-import { Action } from '../types'
-import { statusFromActions } from './statusFromActions'
 import { weekStartOfDate, weekStartFormatted, MS_IN_A_WEEK } from '../utils/date'
+import { Status } from './status'
 
 type WorkWeek = {
   weekStart: string
   hours: number
 }
 
-export const week = (actions: Action[]) => {
-  const status = statusFromActions(actions)
-
+export const week = (status: Status) => {
   const workWeeks: WorkWeek[] = []
 
   const earliestDate = new Date(Math.min(...status.inTimes.map(t => t.start)))

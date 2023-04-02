@@ -1,7 +1,6 @@
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 import isoWeek from 'dayjs/plugin/isoWeek'
-import { Action } from '../types'
 
 dayjs.extend(advancedFormat)
 dayjs.extend(isoWeek)
@@ -32,5 +31,4 @@ export const isInWeek = (weekStartTime: number, time: number) =>
 export const isInDay = (dayStartTime: number, time: number) => timeDiffIsSmallerThan(dayStartTime, time, MS_IN_A_DAY)
 export const isInMonth = (monthStartDate: Date, date: Date) =>
   date.getFullYear() === monthStartDate.getFullYear() && date.getMonth() === monthStartDate.getMonth()
-export const datesHoursDelta = (d1: Date, d2: Date) =>
-  (d2.getTime() - d1.getTime()) / MS_IN_AN_HOUR
+export const datesHoursDelta = (d1: Date, d2: Date) => (d2.getTime() - d1.getTime()) / MS_IN_AN_HOUR
