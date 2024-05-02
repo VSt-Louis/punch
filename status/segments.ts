@@ -1,9 +1,9 @@
 import { MS_IN_AN_HOUR, readableDate } from '../utils/date'
-import { Status } from './status'
+import { PunchState } from '../types'
 
-export const segments = (status: Status) => {
-  return status.inTimes.map(t => ({
-    date: readableDate(new Date(t.start)),
-    hours: (t.end - t.start) / MS_IN_AN_HOUR,
-  }))
+export const segments = (status: PunchState) => {
+    return status.segments.map(t => ({
+        date: readableDate(new Date(t.start)),
+        hours: (t.end - t.start) / MS_IN_AN_HOUR,
+    }))
 }
